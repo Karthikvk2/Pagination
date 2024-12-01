@@ -17,9 +17,7 @@ const PaginatedDataTable = () => {
   const fetchData = useCallback(async () => {
     setIsLoading(true);
     try {
-      const url = new URL(
-        "https://breeze-mis-api-be.apps.dev.simpragma.com/api/v1/query/conversation"
-      );
+      const url = new URL(process.env.REACT_APP_API_URL);
 
       url.searchParams.append("start_date", startDate);
       url.searchParams.append("end_date", endDate);
